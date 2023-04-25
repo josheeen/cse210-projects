@@ -10,9 +10,15 @@ public class Resume
         Console.WriteLine($"Name: {name}");
         Console.WriteLine($"Jobs: ");
         
-        foreach (Job job in jobs)
+        // foreach (Job job in jobs)
+        // {
+        //     job.Display();
+        // }
+
+
+        for (int i=0; i < jobs.Count; i++)
         {
-            job.Display();
+            jobs[i].Display();
         }
     }
 }
