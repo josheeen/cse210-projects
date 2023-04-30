@@ -40,7 +40,8 @@ class Program
                 journal.ShowJournal();
             }
 
-            // Save
+            // Save file
+            // File can be save using csv and txt format
             else if (userInput.Equals(3))
             {   
                 // Asked user and specify the file path and name
@@ -86,6 +87,7 @@ class Program
             }
             }
 
+            //exit program
             else{
                 Console.WriteLine("Thank you for using Journal App!");
             }
