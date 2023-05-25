@@ -1,9 +1,52 @@
-using System;
 
 class Program
 {
+
+    //EXCEED REQUIREMENTS: The program will ask for a username and will save/load it in the textfile. When the user loads the textfile, the program will display a welcoming message. 
+    //Added a counter to the Eternal goal and removed the brackets, so the user can know that it can't be checked and how many times the goal was accomplished
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+       bool play = true;
+       Console.WriteLine("What's your name?: ");
+       User user = new User(Console.ReadLine());
+       Menu menu = new Menu();
+
+       do
+       {
+        Console.WriteLine($"Points: {user.GetTotalPoints()}");
+        menu.ShowMenu();
+        int userOption = int.Parse(Console.ReadLine());
+        switch (userOption)
+        {
+            case 1:
+                user.CreateNewGoal();
+                break;
+
+            case 2:
+                user.DisplayGoals();
+                break;
+
+            case 3:
+                user.Save();
+                break;
+
+            case 4:
+                user.Load();
+                break;
+
+            case 5:
+                user.RecordEvent();
+                break;
+
+            case 6:
+                play = false;
+                break;
+
+            default:
+                Console.WriteLine("That's not an option.");
+                break;
+
+        }
+       } while (play);
     }
 }
